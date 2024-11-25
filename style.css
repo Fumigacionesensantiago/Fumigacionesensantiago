@@ -1,0 +1,384 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+}
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  z-index: 1000;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  margin: 10px 0;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+section {
+  padding: 20px;
+}
+.button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+.modal.show {
+  display: block;
+}
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+.overlay.show {
+  display: block;
+}
+.modal {
+  display: none; /* Ocultar por defecto */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.overlay {
+  display: none; /* Ocultar por defecto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+.modal.show {
+  display: block; /* Mostrar cuando se active */
+}
+
+.overlay.show {
+  display: block; /* Mostrar cuando se active */
+}
+
+/* Animación para el modal */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translate(-50%, -60%);
+  }
+  to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+  }
+}
+/* Estilos para el botón del menú */
+.menu-icon {
+  background-color: #333;
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+/* Contenedor del menú desplegable */
+.dropdown-content {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  top: 50px; /* Ajusta según la posición del botón */
+  right: 10px;
+  background-color: #333;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  border-radius: 4px;
+}
+
+/* Estilo de los enlaces del menú */
+.dropdown-content a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+  transition: background 0.3s;
+}
+
+/* Efecto hover para los enlaces */
+.dropdown-content a:hover {
+  background-color: #575757;
+}
+@media (max-width: 768px) {
+  div {
+    flex-direction: column;
+    text-align: center;
+  }
+  img {
+    margin-bottom: 20px;
+  }
+}
+/*
+Todo el CSS comentado temporalmente.
+*/
+body {
+  font-family: 'Poppins', sans-serif; /* Usa Poppins en todo el sitio */
+}
+/* Ajustar el espacio entre secciones */
+section {
+  margin-top: 40px; /* Espacio superior */
+  margin-bottom: 40px; /* Espacio inferior */
+  padding-top: 20px; /* Espacio interno superior */
+  padding-bottom: 20px; /* Espacio interno inferior */
+}
+
+/* Reducir márgenes en encabezados */
+h1, h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+/* Ajustar espaciados en párrafos */
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 1.8; /* Más espacio entre líneas */
+}
+
+/* Espacio adicional para botones */
+button {
+  margin-top: 20px;
+}
+
+/* Opcional: Limitar la anchura del contenido */
+.content {
+  max-width: 800px;
+  margin: 0 auto; /* Centrar contenido */
+}
+/* Estilo General */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #E0E0E0; /* Fondo gris claro */
+  color: #000000; /* Texto negro profundo */
+  margin: 0;
+  padding: 0;
+}
+
+/* Encabezados */
+h1, h2, h3 {
+  color: #000000; /* Negro profundo */
+  text-transform: uppercase; /* Letras en mayúscula */
+  font-weight: bold;
+}
+
+/* Fondo de la Página */
+header {
+  background-color: #FFFFFF; /* Blanco puro */
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 2px solid #E0E0E0; /* Divisor gris claro */
+}
+
+/* Botones */
+button {
+  background-color: #34A853; /* Verde esmeralda */
+  color: #FFFFFF; /* Texto blanco puro */
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #0052CC; /* Cambia a azul zafiro al pasar el cursor */
+  transform: scale(1.05); /* Efecto de zoom */
+}
+
+/* Enlaces Interactivos */
+a {
+  color: #0052CC; /* Azul zafiro */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #34A853; /* Verde esmeralda al pasar el cursor */
+}
+
+/* Secciones */
+section {
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #FFFFFF; /* Blanco puro */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Divisores */
+hr {
+  border: 0;
+  height: 1px;
+  background: #E0E0E0; /* Gris claro */
+  margin: 20px 0;
+}
+
+/* Imágenes */
+img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* Botones de Navegación */
+.dropdown-content a {
+  color: #000000; /* Negro profundo */
+  padding: 10px;
+  text-align: left;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #E0E0E0; /* Gris claro al pasar el cursor */
+}
+
+/* Formularios */
+input[type="text"],
+input[type="email"] {
+  border: 1px solid #E0E0E0;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+button[type="submit"] {
+  background-color: #34A853;
+  color: #FFFFFF;
+  border: none;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0052CC;
+}
+
+/* Pie de Página */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #000000; /* Negro profundo */
+  color: #FFFFFF; /* Blanco puro */
+  font-size: 14px;
+}
+
+/* Ajuste Responsivo */
+@media (max-width: 768px) {
+  section {
+      margin: 20px;
+      padding: 15px;
+  }
+
+  button {
+      font-size: 14px;
+      padding: 10px;
+  }
+}
+/* Estilo base para los botones */
+button {
+  background-color: #34A853; /* Verde esmeralda */
+  color: #FFFFFF; /* Texto blanco puro */
+  border: none; /* Sin bordes */
+  padding: 12px 20px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño del texto */
+  font-weight: bold; /* Texto en negrita */
+  border-radius: 25px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor a una mano */
+  transition: all 0.3s ease-in-out; /* Transiciones suaves */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+/* Efecto hover */
+button:hover {
+  background-color: #0052CC; /* Azul zafiro al pasar el cursor */
+  color: #FFFFFF; /* Asegura que el texto siga siendo blanco */
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+  transform: translateY(-2px); /* Eleva ligeramente el botón */
+}
+
+/* Botón secundario con otro diseño (opcional) */
+button.secondary {
+  background-color: #E0E0E0; /* Gris claro */
+  color: #000000; /* Texto negro profundo */
+  border: 1px solid #34A853; /* Borde verde */
+  font-size: 14px;
+  font-weight: normal;
+}
+
+/* Hover para el botón secundario */
+button.secondary:hover {
+  background-color: #34A853; /* Cambia el fondo a verde esmeralda */
+  color: #FFFFFF; /* Texto blanco */
+  transform: translateY(-2px); /* Eleva ligeramente */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Añade sombra */
+}

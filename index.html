@@ -102,31 +102,57 @@
         <a href="https://www.instagram.com/p/CeL9jM_u5Pa/" class="button" target="_blank">Revisar en Instagram</a>
     </section>
 </body>
-    <!-- Pop-up de bienvenida -->
+<!-- Pop-up de bienvenida optimizado -->
 <div id="popup" style="
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.85); display: flex; justify-content: center; align-items: center; z-index: 9999;">
-    <div style="background-color: white; text-align: center; padding: 30px; border-radius: 10px; max-width: 500px;">
-       <!-- Logo corregido -->
-       <img src="Fumigacioneslogo.png" alt="Logo Fumigaciones en Santiago" 
-     style="width: 200px; height: auto; display: block; margin: 0 auto;">
-        <h2 style="color: #333;">¡Bienvenido!</h2>
-        <p style="color: #555; margin-bottom: 20px; font-size: 16px;">
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 9999;">
+    <div style="
+        background-color: #fff; 
+        text-align: center; 
+        padding: 20px 30px; 
+        border-radius: 10px; 
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+        max-width: 400px; 
+        width: 90%;">
+        
+        <!-- Logo ajustado -->
+        <img src="Fumigacioneslogo.png" alt="Logo Fumigaciones en Santiago" 
+             style="width: 120px; height: auto; margin-bottom: 15px;">
+        
+        <!-- Mensaje de bienvenida -->
+        <h2 style="color: #333; font-size: 24px; margin: 0;">¡Bienvenido!</h2>
+        <p style="color: #555; font-size: 14px; margin: 15px 0;">
             No olvides revisar nuestras <strong>historias divertidas</strong>. <br>
             ¡Quizá te den una idea de cómo operan las plagas!
         </p>
+
+        <!-- Botón de inicio -->
         <button onclick="closePopupAndScroll()" style="
-            background-color: #007BFF; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+            background-color: #007BFF; 
+            color: #fff; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 14px;">
             Iniciar
         </button>
     </div>
 </div>
 
 <script>
-    // Función para cerrar el pop-up y redirigir a las historias divertidas
+    // Función para cerrar el pop-up y redirigir a la sección de historias divertidas
     function closePopupAndScroll() {
-        document.getElementById('popup').style.display = 'none'; // Oculta el pop-up
-        document.getElementById('historias-divertidas').scrollIntoView({ behavior: 'smooth' }); // Desplaza a la sección
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('historias-divertidas').scrollIntoView({ behavior: 'smooth' });
     }
 </script>
 </html>

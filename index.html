@@ -92,37 +92,128 @@
     </div>
 </section>
 
-     <!-- Segunda sección con el insecto a la derecha -->
-     <div style="display: flex; align-items: center; gap: 20px; max-width: 800px; margin: 30px auto;">
-        <!-- Texto del insecto -->
-        <div style="text-align: justify; line-height: 1.6;">
-            <h3 style="margin: 0; font-size: 18px; font-weight: bold;">
-                ¿Cómo controlan en Fumigaciones en Santiago a los insectos?
-            </h3>
-            <p style="margin: 10px 0 0;">
-                Controlamos desde chinches y cucarachas hasta arañas, moscas y más. Nuestro enfoque es simple y efectivo: utilizamos insecticidas de bajo olor y toxicidad, pero con alta duración para eliminar hasta el último insecto en tu hogar. Además, explicamos cada paso del proceso para que tengas la tranquilidad de saber cómo estamos solucionando el problema.
-            </p>
-        </div>
-        <!-- Imagen del insecto -->
-<img src="Insecto.png" alt="Eliminación de insectos como cucarachas y chinches" width="150" height="150" style="margin: 15px auto; display: block;" loading="lazy">
-           </p>
-        </div>
+<!-- Segunda sección con el insecto a la derecha -->
+<div class="image-text-container">
+    <!-- Texto del insecto -->
+    <div class="text-content">
+        <h3>¿Cómo controlan en Fumigaciones en Santiago a los insectos?</h3>
+        <p>
+            Controlamos desde chinches y cucarachas hasta arañas, moscas y más. Nuestro enfoque es simple y efectivo: utilizamos insecticidas de bajo olor y toxicidad, pero con alta duración para eliminar hasta el último insecto en tu hogar. Además, explicamos cada paso del proceso para que tengas la tranquilidad de saber cómo estamos solucionando el problema.
+        </p>
     </div>
-</section>
+    <!-- Imagen del insecto -->
+    <img src="Insecto.png" alt="Eliminación de insectos como cucarachas y chinches">
+</div>
+
+<style>
+/* Contenedor principal */
+.image-text-container {
+    display: flex;
+    flex-direction: column; /* Por defecto, en columna para móviles */
+    align-items: center;
+    gap: 20px;
+    max-width: 800px;
+    margin: 30px auto;
+    text-align: justify;
+}
+
+/* Ajustes de texto */
+.text-content h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.text-content p {
+    margin: 10px 0 0;
+    line-height: 1.6;
+}
+
+/* Ajustes de imagen */
+.image-text-container img {
+    width: 150px;
+    height: auto;
+    flex-shrink: 0; /* Evita que la imagen se deforme */
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 768px) {
+    .image-text-container {
+        flex-direction: row; /* En pantallas grandes, texto e imagen en fila */
+        align-items: center;
+    }
+
+    .text-content {
+        flex: 1; /* El texto ocupa más espacio */
+    }
+
+    .image-text-container img {
+        width: 200px; /* Imagen más grande en pantallas grandes */
+    }
+}
+</style>
     
-    <!-- Tercera sección con el virus a la izquierda -->
-    <div style="display: flex; align-items: center; gap: 20px; max-width: 800px; margin: 30px auto;">
-<img src="Virus.png" alt="Eliminación de virus y bacterias" width="150" height="150" style="margin: 15px auto; display: block;" loading="lazy">
-        <div style="text-align: justify; line-height: 1.6;">
-            <h3 style="margin: 0; font-size: 18px; font-weight: bold;">
-                ¿Puedo dejar mi ambiente libre de hongos, virus y bacterias?
-            </h3>
-            <p style="margin: 10px 0 0;">
-                ¡Claro que sí! Nuestro servicio de sanitización utiliza desinfectantes avanzados que eliminan agentes dañinos para tu salud. Estos productos no dejan residuos tóxicos, garantizando espacios seguros y saludables para tu familia.
-            </p>
-        </div>
+<!-- Tercera sección con el virus a la izquierda -->
+<div class="image-text-container">
+    <!-- Imagen del virus -->
+    <img src="Virus.png" alt="Eliminación de virus y bacterias">
+    <!-- Texto descriptivo -->
+    <div class="text-content">
+        <h3>¿Puedo dejar mi ambiente libre de hongos, virus y bacterias?</h3>
+        <p>
+            ¡Claro que sí! Nuestro servicio de sanitización utiliza desinfectantes avanzados que eliminan agentes dañinos para tu salud. Estos productos no dejan residuos tóxicos, garantizando espacios seguros y saludables para tu familia.
+        </p>
     </div>
-</section>
+</div>
+
+<style>
+/* Contenedor principal */
+.image-text-container {
+    display: flex;
+    flex-direction: column; /* Por defecto, en columna para móviles */
+    align-items: center;
+    gap: 20px;
+    max-width: 800px;
+    margin: 30px auto;
+    text-align: justify;
+}
+
+/* Ajustes de texto */
+.text-content h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.text-content p {
+    margin: 10px 0 0;
+    line-height: 1.6;
+}
+
+/* Ajustes de imagen */
+.image-text-container img {
+    width: 150px;
+    height: auto;
+    flex-shrink: 0; /* Evita que la imagen se deforme */
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 768px) {
+    .image-text-container {
+        flex-direction: row; /* En pantallas grandes, texto e imagen en fila */
+        align-items: center;
+    }
+
+    .text-content {
+        flex: 1; /* El texto ocupa más espacio */
+    }
+
+    .image-text-container img {
+        width: 200px; /* Imagen más grande en pantallas grandes */
+    }
+}
+</style>
+
 
 <section id="casos-exito" style="padding: 30px;">
     <h2 style="text-align: center; font-size: 24px; font-weight: bold; margin-bottom: 20px;">
@@ -329,7 +420,9 @@
 <div style="text-align: center; padding: 20px;">
     <h2 style="color: #333; font-size: 24px; margin: 0;">¡Bienvenido!</h2>
     <p style="color: #555; font-size: 14px; margin: 15px auto; line-height: 1.6; max-width: 400px;">
-        No olvides revisar nuestras <strong>historias divertidas</strong> 🐶🐾. <br>
+        <p class="emoji-inline">
+    No olvides revisar nuestras <strong>historias divertidas</strong> 🐶🐾 <br>
+</p>    
         ¡Quizá te den una idea de cómo operan las plagas!
     </p>
 </div>

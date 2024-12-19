@@ -402,4 +402,9 @@ p {
     color: #555;
     text-align: justify;
 }
+.emoji-inline {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+}
 

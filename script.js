@@ -69,3 +69,25 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("No se encontraron los elementos necesarios para el modal de contacto.");
     }
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const contactModalBtn = document.getElementById("contactModalBtn");
+    const contactModal = document.getElementById("contactModal");
+    const closeModal = document.getElementById("closeModal");
+
+    // Abrir el modal cuando se hace clic en el botón
+    contactModalBtn.addEventListener("click", () => {
+        contactModal.style.display = "block";
+    });
+
+    // Cerrar el modal cuando se hace clic en el botón de cerrar
+    closeModal.addEventListener("click", () => {
+        contactModal.style.display = "none";
+    });
+
+    // Cerrar el modal si se hace clic fuera de él
+    window.addEventListener("click", (event) => {
+        if (event.target === contactModal) {
+            contactModal.style.display = "none";
+        }
+    });
+});

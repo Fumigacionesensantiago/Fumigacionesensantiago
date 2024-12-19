@@ -1,47 +1,71 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const contractBtn = document.getElementById('contractBtn');
-  const modalForm = document.getElementById('modalForm');
-  const overlay = document.getElementById('overlay');
+    // Variables para el modal de "Contratar"
+    const contractBtn = document.getElementById('contractBtn');
+    const modalForm = document.getElementById('modalForm');
+    const overlay = document.getElementById('overlay');
 
-  if (contractBtn && modalForm && overlay) {
-      // Muestra el modal al hacer clic en el botón "Contratar"
-      contractBtn.addEventListener('click', () => {
-          modalForm.classList.add('show');
-          overlay.classList.add('show');
-      });
+    if (contractBtn && modalForm && overlay) {
+        // Muestra el modal al hacer clic en "Contratar"
+        contractBtn.addEventListener('click', () => {
+            modalForm.classList.add('show');
+            overlay.classList.add('show');
+        });
 
-      // Oculta el modal al hacer clic en el overlay
-      overlay.addEventListener('click', () => {
-          modalForm.classList.remove('show');
-          overlay.classList.remove('show');
-      });
-  } else {
-      console.error("No se encontraron los elementos necesarios para el modal.");
-  }
+        // Oculta el modal al hacer clic en el overlay
+        overlay.addEventListener('click', () => {
+            modalForm.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+    } else {
+        console.error("No se encontraron los elementos necesarios para el modal de contratación.");
+    }
+
+    // Variables para el menú
+    const menuButton = document.getElementById("menuButton");
+    const menuDropdown = document.getElementById("menuDropdown");
+
+    if (menuButton && menuDropdown) {
+        // Muestra u oculta el menú al hacer clic en el botón
+        menuButton.addEventListener("click", () => {
+            const isVisible = menuDropdown.style.display === "block";
+            menuDropdown.style.display = isVisible ? "none" : "block";
+        });
+
+        // Cierra el menú si se hace clic fuera de él
+        window.addEventListener("click", (event) => {
+            if (!menuButton.contains(event.target) && !menuDropdown.contains(event.target)) {
+                menuDropdown.style.display = "none";
+            }
+        });
+    } else {
+        console.error("No se encontraron los elementos necesarios para el menú.");
+    }
+
+    // Modal de contacto
+    const contactModal = document.getElementById('contactModal');
+    const modalBackground = document.getElementById('modalBackground');
+    const openContactModalBtn = document.getElementById('contactModalBtn');
+    const closeContactModalBtn = document.getElementById('closeModalBtn');
+
+    if (contactModal && modalBackground && openContactModalBtn && closeContactModalBtn) {
+        // Abre el modal de contacto
+        openContactModalBtn.addEventListener('click', () => {
+            contactModal.style.display = 'block';
+            modalBackground.style.display = 'block';
+        });
+
+        // Cierra el modal de contacto
+        closeContactModalBtn.addEventListener('click', () => {
+            contactModal.style.display = 'none';
+            modalBackground.style.display = 'none';
+        });
+
+        // Cierra el modal si se hace clic fuera de él
+        modalBackground.addEventListener('click', () => {
+            contactModal.style.display = 'none';
+            modalBackground.style.display = 'none';
+        });
+    } else {
+        console.error("No se encontraron los elementos necesarios para el modal de contacto.");
+    }
 });
-document.addEventListener("DOMContentLoaded", () => {
-  const menuButton = document.getElementById("menuButton");
-  const menuDropdown = document.getElementById("menuDropdown");
-
-  // Muestra u oculta el menú al hacer clic en el botón
-  menuButton.addEventListener("click", () => {
-      const isVisible = menuDropdown.style.display === "block";
-      menuDropdown.style.display = isVisible ? "none" : "block";
-  });
-
-  // Cierra el menú si se hace clic fuera de él
-  window.addEventListener("click", (event) => {
-      if (!menuButton.contains(event.target) && !menuDropdown.contains(event.target)) {
-          menuDropdown.style.display = "none";
-      }
-  });
-});
-function openModal() {
-    document.getElementById('contactModal').style.display = 'block';
-    document.getElementById('modalBackground').style.display = 'block';
-}
-
-function closeModal() {
-    document.getElementById('contactModal').style.display = 'none';
-    document.getElementById('modalBackground').style.display = 'none';
-}

@@ -36,3 +36,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   });
 });
+function openModal() {
+    document.getElementById('contactModal').style.display = 'block';
+    document.getElementById('modalBackground').style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('contactModal').style.display = 'none';
+    document.getElementById('modalBackground').style.display = 'none';
+}

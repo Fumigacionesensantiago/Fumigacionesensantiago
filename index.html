@@ -492,20 +492,41 @@
             cursor: pointer; 
             color: #999;">&times;</span>
 
-        <!-- Formulario de registro -->
+ <!-- Formulario de registro -->
+<div id="formPopup" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;">
+    <div style="
+        background-color: #fff;
+        padding: 30px 40px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        max-width: 500px;
+        width: 90%;
+        text-align: center;">
+        
         <h2 style="
             color: #333; 
             font-size: 24px; 
             margin-bottom: 15px; 
             font-weight: bold;">
-            REGISTRO PARA CLIENTES
+            REGISTRO EXCLUSIVO DE CLIENTES
         </h2>
+        
         <form action="https://script.google.com/macros/s/AKfycbx5UTZlfR4Ww1O-0QYg0-IeFAIynLbsmKtkBBjq9DUz3zLQAHdCDqMHPK7fyZAVvh6Y4A/exec" 
               method="POST" 
-              style="text-align: left;">
+              style="text-align: center;">
             <label for="name" style="font-size: 14px;">Nombres y Apellidos:</label>
             <input type="text" name="name" id="name" style="
-                width: 100%; 
+                width: 90%; 
                 margin-bottom: 15px; 
                 padding: 10px; 
                 border: 1px solid #ddd; 
@@ -513,7 +534,7 @@
 
             <label for="address" style="font-size: 14px;">Dirección:</label>
             <input type="text" name="address" id="address" style="
-                width: 100%; 
+                width: 90%; 
                 margin-bottom: 15px; 
                 padding: 10px; 
                 border: 1px solid #ddd; 
@@ -521,7 +542,7 @@
 
             <label for="phone" style="font-size: 14px;">Teléfono:</label>
             <input type="text" name="phone" id="phone" style="
-                width: 100%; 
+                width: 90%; 
                 margin-bottom: 15px; 
                 padding: 10px; 
                 border: 1px solid #ddd; 
@@ -529,7 +550,7 @@
 
             <label for="birthday" style="font-size: 14px;">Fecha de Cumpleaños:</label>
             <input type="date" name="birthday" id="birthday" style="
-                width: 100%; 
+                width: 90%; 
                 margin-bottom: 15px; 
                 padding: 10px; 
                 border: 1px solid #ddd; 
@@ -537,7 +558,7 @@
 
             <label for="email" style="font-size: 14px;">Correo Electrónico:</label>
             <input type="email" name="email" id="email" style="
-                width: 100%; 
+                width: 90%; 
                 margin-bottom: 15px; 
                 padding: 10px; 
                 border: 1px solid #ddd; 
@@ -545,7 +566,7 @@
 
             <label for="social" style="font-size: 14px;">Instagram o Facebook:</label>
             <input type="text" name="social" id="social" style="
-                width: 100%; 
+                width: 90%; 
                 margin-bottom: 20px; 
                 padding: 10px; 
                 border: 1px solid #ddd; 
@@ -562,21 +583,22 @@
                 Enviar
             </button>
         </form>
+        
+        <!-- Botón de cerrar -->
+        <button onclick="closeFormPopup()" style="
+            position: absolute; 
+            top: 10px; 
+            right: 15px; 
+            background: none; 
+            border: none; 
+            font-size: 20px; 
+            cursor: pointer;">
+            &times;
+        </button>
     </div>
 </div>
 
 <script>
-    // Función para cerrar el pop-up de bienvenida
-    function closeWelcomePopup() {
-        document.getElementById('welcomePopup').style.display = 'none';
-    }
-
-    // Función para abrir el formulario
-    function openFormPopup() {
-        closeWelcomePopup();
-        document.getElementById('formPopup').style.display = 'flex';
-    }
-
     // Función para cerrar el formulario
     function closeFormPopup() {
         document.getElementById('formPopup').style.display = 'none';

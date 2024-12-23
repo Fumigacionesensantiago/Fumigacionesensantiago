@@ -432,8 +432,10 @@
 
 <!-- Ventana emergente del formulario -->
 <div id="registrationModal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.5);">
-    <div style="background-color: white; margin: 10% auto; padding: 20px; border-radius: 10px; width: 90%; max-width: 500px;">
-        <span onclick="closeModal()" style="color: red; float: right; font-size: 20px; cursor: pointer;">&times;</span>
+    <div style="background-color: white; margin: 10% auto; padding: 20px; border-radius: 10px; width: 90%; max-width: 500px; position: relative;">
+        <!-- Botón de cierre -->
+        <span onclick="closeModal()" style="position: absolute; top: 10px; right: 15px; color: #333; font-size: 20px; font-weight: bold; cursor: pointer;">&times;</span>
+        
         <h3 style="text-align: center;">Registro para Clientes</h3>
         <form id="registrationForm" action="https://script.google.com/macros/s/AKfycbx5UTZlfR4Ww1O-0QYg0-IeFAIynLbsmKtkBBjq9DUz3zLQAHdCDqMHPK7fyZAVvh6Y4A/exec" method="post">
             <label for="name">Nombres y Apellidos:</label>
@@ -468,6 +470,7 @@
         document.getElementById('registrationModal').style.display = 'none';
     }
 </script>
+
 
 
 <script>

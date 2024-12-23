@@ -407,43 +407,47 @@
     <div style="
         background-color: #fff; 
         text-align: center; 
-        padding: 20px 30px; 
-        border-radius: 10px; 
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
-        max-width: 400px; 
+        padding: 30px 40px; 
+        border-radius: 12px; 
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); 
+        max-width: 450px; 
         width: 90%; 
         position: relative;">
         
         <!-- Botón para cerrar -->
         <span onclick="closeWelcomePopup()" style="
             position: absolute; 
-            top: 10px; 
-            right: 15px; 
-            font-size: 18px; 
+            top: 15px; 
+            right: 20px; 
+            font-size: 20px; 
             font-weight: bold; 
             cursor: pointer; 
-            color: #555;">&times;</span>
+            color: #999;">&times;</span>
 
-        <!-- Logo ajustado -->
+        <!-- Logo más destacado -->
         <img src="Fumigacioneslogo.png" alt="Logo Fumigaciones en Santiago" 
-             style="width: 160px; height: auto; margin-bottom: 15px;">
+             style="width: 180px; height: auto; margin-bottom: 20px;">
 
         <!-- Mensaje de bienvenida -->
-        <h2 style="color: #333; font-size: 24px; margin: 0;">¡Bienvenido! 🎉</h2>
-        <p style="color: #555; font-size: 14px; margin: 15px 0; line-height: 1.6;">
-            <strong>Si ya eres cliente, regístrate</strong> y participa en nuestros <strong>sorteos exclusivos</strong>. <br>
-            ¡Un regalito a tu puerta no estaría nada mal! 🎁✨
+        <h2 style="color: #333; font-size: 26px; margin: 0;">¡BIENVENIDO!</h2>
+        <p style="
+            color: #555; 
+            font-size: 16px; 
+            margin: 20px 0; 
+            line-height: 1.6;">
+            <strong>Si ya eres cliente</strong>, regístrate y participa en nuestros <strong>sorteos exclusivos</strong>. <br>
+            ¡Un regalito a tu puerta no estaría nada mal! <span style="font-size: 18px;">🎁✨</span>
         </p>
 
         <!-- Botón de registro -->
         <button onclick="openFormPopup()" style="
             background-color: #007BFF; 
             color: #fff; 
-            padding: 10px 20px; 
+            padding: 12px 25px; 
             border: none; 
-            border-radius: 5px; 
+            border-radius: 6px; 
             cursor: pointer; 
-            font-size: 14px;">
+            font-size: 16px;">
             Registrarme
         </button>
     </div>
@@ -464,55 +468,55 @@
     <div style="
         background-color: #fff; 
         text-align: left; 
-        padding: 20px 30px; 
-        border-radius: 10px; 
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
-        max-width: 400px; 
+        padding: 30px 40px; 
+        border-radius: 12px; 
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); 
+        max-width: 450px; 
         width: 90%; 
         position: relative;">
-
+        
         <!-- Botón para cerrar -->
         <span onclick="closeFormPopup()" style="
             position: absolute; 
-            top: 10px; 
-            right: 15px; 
-            font-size: 18px; 
+            top: 15px; 
+            right: 20px; 
+            font-size: 20px; 
             font-weight: bold; 
             cursor: pointer; 
-            color: #555;">&times;</span>
+            color: #999;">&times;</span>
 
         <!-- Título del formulario -->
-        <h2 style="color: #333; font-size: 20px; text-align: center;">REGISTRO PARA CLIENTES</h2>
+        <h2 style="color: #333; font-size: 22px; text-align: center;">REGISTRO PARA CLIENTES</h2>
 
         <!-- Formulario -->
         <form action="https://script.google.com/macros/s/AKfycbx5UTZlfR4Ww1O-0QYg0-IeFAIynLbsmKtkBBjq9DUz3zLQAHdCDqMHPK7fyZAVvh6Y4A/exec" method="POST">
             <label for="name">Nombres y Apellidos:</label>
-            <input type="text" id="name" name="name" style="width: 100%; margin-bottom: 10px; padding: 8px;" required>
+            <input type="text" id="name" name="name" style="width: 100%; margin-bottom: 15px; padding: 10px;" required>
 
             <label for="address">Dirección:</label>
-            <input type="text" id="address" name="address" style="width: 100%; margin-bottom: 10px; padding: 8px;" required>
+            <input type="text" id="address" name="address" style="width: 100%; margin-bottom: 15px; padding: 10px;" required>
 
             <label for="phone">Teléfono:</label>
-            <input type="tel" id="phone" name="phone" style="width: 100%; margin-bottom: 10px; padding: 8px;" required>
+            <input type="tel" id="phone" name="phone" style="width: 100%; margin-bottom: 15px; padding: 10px;" required>
 
             <label for="birthday">Fecha de Cumpleaños:</label>
-            <input type="date" id="birthday" name="birthday" style="width: 100%; margin-bottom: 10px; padding: 8px;" required>
+            <input type="date" id="birthday" name="birthday" style="width: 100%; margin-bottom: 15px; padding: 10px;" required>
 
             <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" style="width: 100%; margin-bottom: 10px; padding: 8px;" required>
+            <input type="email" id="email" name="email" style="width: 100%; margin-bottom: 15px; padding: 10px;" required>
 
             <label for="social">Instagram o Facebook:</label>
-            <input type="text" id="social" name="social" style="width: 100%; margin-bottom: 10px; padding: 8px;" required>
+            <input type="text" id="social" name="social" style="width: 100%; margin-bottom: 15px; padding: 10px;" required>
 
             <!-- Botón de enviar -->
             <button type="submit" style="
                 background-color: #007BFF; 
                 color: #fff; 
-                padding: 10px 20px; 
+                padding: 12px 25px; 
                 border: none; 
-                border-radius: 5px; 
+                border-radius: 6px; 
                 cursor: pointer; 
-                font-size: 14px; 
+                font-size: 16px; 
                 width: 100%;">
                 Enviar
             </button>

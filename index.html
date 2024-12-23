@@ -391,7 +391,6 @@
         }
     </style>
 </head>
-</body>
 <!-- Pop-up de bienvenida -->
 <div id="welcomePopup" style="
     position: fixed; 
@@ -426,15 +425,21 @@
 
         <!-- Logo más destacado -->
         <img src="Fumigacioneslogo.png" alt="Logo Fumigaciones en Santiago" 
-             style="width: 180px; height: auto; margin-bottom: 20px;">
+             style="width: 200px; height: auto; margin-bottom: 25px;">
 
         <!-- Mensaje de bienvenida -->
-        <h2 style="color: #333; font-size: 26px; margin: 0;">¡BIENVENIDO!</h2>
+        <h2 style="
+            color: #333; 
+            font-size: 26px; 
+            margin: 0 0 15px 0; 
+            font-weight: bold;">
+            ¡BIENVENIDO!
+        </h2>
         <p style="
             color: #555; 
             font-size: 16px; 
-            margin: 20px 0; 
-            line-height: 1.6;">
+            line-height: 1.8; 
+            margin: 0 0 20px 0;">
             <strong>Si ya eres cliente</strong>, regístrate y participa en nuestros <strong>sorteos exclusivos</strong>. <br>
             ¡Un regalito a tu puerta no estaría nada mal! <span style="font-size: 18px;">🎁✨</span>
         </p>
@@ -447,13 +452,14 @@
             border: none; 
             border-radius: 6px; 
             cursor: pointer; 
-            font-size: 16px;">
+            font-size: 16px; 
+            margin-top: 15px;">
             Registrarme
         </button>
     </div>
 </div>
 
-<!-- Pop-up del formulario de registro -->
+<!-- Pop-up de formulario -->
 <div id="formPopup" style="
     position: fixed; 
     top: 0; 
@@ -467,7 +473,7 @@
     z-index: 9999;">
     <div style="
         background-color: #fff; 
-        text-align: left; 
+        text-align: center; 
         padding: 30px 40px; 
         border-radius: 12px; 
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); 
@@ -485,39 +491,73 @@
             cursor: pointer; 
             color: #999;">&times;</span>
 
-        <!-- Título del formulario -->
-        <h2 style="color: #333; font-size: 22px; text-align: center;">REGISTRO PARA CLIENTES</h2>
+        <!-- Formulario de registro -->
+        <h2 style="
+            color: #333; 
+            font-size: 24px; 
+            margin-bottom: 15px; 
+            font-weight: bold;">
+            REGISTRO PARA CLIENTES
+        </h2>
+        <form action="https://script.google.com/macros/s/AKfycbx5UTZlfR4Ww1O-0QYg0-IeFAIynLbsmKtkBBjq9DUz3zLQAHdCDqMHPK7fyZAVvh6Y4A/exec" 
+              method="POST" 
+              style="text-align: left;">
+            <label for="name" style="font-size: 14px;">Nombres y Apellidos:</label>
+            <input type="text" name="name" id="name" style="
+                width: 100%; 
+                margin-bottom: 15px; 
+                padding: 10px; 
+                border: 1px solid #ddd; 
+                border-radius: 5px;">
 
-        <!-- Formulario -->
-        <form action="https://script.google.com/macros/s/AKfycbx5UTZlfR4Ww1O-0QYg0-IeFAIynLbsmKtkBBjq9DUz3zLQAHdCDqMHPK7fyZAVvh6Y4A/exec" method="POST">
-            <label for="name">Nombres y Apellidos:</label>
-            <input type="text" id="name" name="name" style="width: 100%; margin-bottom: 15px; padding: 10px;" required>
+            <label for="address" style="font-size: 14px;">Dirección:</label>
+            <input type="text" name="address" id="address" style="
+                width: 100%; 
+                margin-bottom: 15px; 
+                padding: 10px; 
+                border: 1px solid #ddd; 
+                border-radius: 5px;">
 
-            <label for="address">Dirección:</label>
-            <input type="text" id="address" name="address" style="width: 100%; margin-bottom: 15px; padding: 10px;" required>
+            <label for="phone" style="font-size: 14px;">Teléfono:</label>
+            <input type="text" name="phone" id="phone" style="
+                width: 100%; 
+                margin-bottom: 15px; 
+                padding: 10px; 
+                border: 1px solid #ddd; 
+                border-radius: 5px;">
 
-            <label for="phone">Teléfono:</label>
-            <input type="tel" id="phone" name="phone" style="width: 100%; margin-bottom: 15px; padding: 10px;" required>
+            <label for="birthday" style="font-size: 14px;">Fecha de Cumpleaños:</label>
+            <input type="date" name="birthday" id="birthday" style="
+                width: 100%; 
+                margin-bottom: 15px; 
+                padding: 10px; 
+                border: 1px solid #ddd; 
+                border-radius: 5px;">
 
-            <label for="birthday">Fecha de Cumpleaños:</label>
-            <input type="date" id="birthday" name="birthday" style="width: 100%; margin-bottom: 15px; padding: 10px;" required>
+            <label for="email" style="font-size: 14px;">Correo Electrónico:</label>
+            <input type="email" name="email" id="email" style="
+                width: 100%; 
+                margin-bottom: 15px; 
+                padding: 10px; 
+                border: 1px solid #ddd; 
+                border-radius: 5px;">
 
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" style="width: 100%; margin-bottom: 15px; padding: 10px;" required>
+            <label for="social" style="font-size: 14px;">Instagram o Facebook:</label>
+            <input type="text" name="social" id="social" style="
+                width: 100%; 
+                margin-bottom: 20px; 
+                padding: 10px; 
+                border: 1px solid #ddd; 
+                border-radius: 5px;">
 
-            <label for="social">Instagram o Facebook:</label>
-            <input type="text" id="social" name="social" style="width: 100%; margin-bottom: 15px; padding: 10px;" required>
-
-            <!-- Botón de enviar -->
             <button type="submit" style="
                 background-color: #007BFF; 
-                color: #fff; 
+                color: white; 
                 padding: 12px 25px; 
                 border: none; 
                 border-radius: 6px; 
                 cursor: pointer; 
-                font-size: 16px; 
-                width: 100%;">
+                font-size: 16px;">
                 Enviar
             </button>
         </form>
@@ -530,17 +570,18 @@
         document.getElementById('welcomePopup').style.display = 'none';
     }
 
-    // Función para abrir el pop-up del formulario
+    // Función para abrir el formulario
     function openFormPopup() {
         closeWelcomePopup();
         document.getElementById('formPopup').style.display = 'flex';
     }
 
-    // Función para cerrar el pop-up del formulario
+    // Función para cerrar el formulario
     function closeFormPopup() {
         document.getElementById('formPopup').style.display = 'none';
     }
 </script>
+
 
 
 <script>

@@ -392,8 +392,8 @@
     </style>
 </head>
 </body>
-<!-- Pop-up de bienvenida optimizado -->
-<div id="popup" style="
+<!-- Pop-up de bienvenida -->
+<div id="welcomePopup" style="
     position: fixed; 
     top: 0; 
     left: 0; 
@@ -411,34 +411,21 @@
         border-radius: 10px; 
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
         max-width: 400px; 
-        width: 90%; 
-        position: relative;">
-        
-        <!-- Botón para cerrar la ventana -->
-        <span onclick="closePopup()" style="
-            position: absolute; 
-            top: 10px; 
-            right: 10px; 
-            font-size: 18px; 
-            font-weight: bold; 
-            cursor: pointer; 
-            color: #333;">
-            &times;
-        </span>
-        
+        width: 90%;">
+
         <!-- Logo ajustado -->
         <img src="Fumigacioneslogo.png" alt="Logo Fumigaciones en Santiago" 
              style="width: 150px; height: auto; margin-bottom: 15px;">
-        
+
         <!-- Mensaje de bienvenida -->
         <h2 style="color: #333; font-size: 24px; margin: 0;">¡Bienvenido! 🎉</h2>
-        <p style="color: #555; font-size: 14px; margin: 15px auto; line-height: 1.6; max-width: 400px; text-align: center;">
-            <strong>Si ya eres cliente</strong>, regístrate y participa en nuestros <strong>sorteos exclusivos</strong>. <br>
+        <p style="color: #555; font-size: 14px; margin: 15px 0;">
+            <strong>Si ya eres cliente, regístrate</strong> y participa en nuestros <strong>sorteos exclusivos</strong>. <br>
             ¡Un regalito a tu puerta no estaría nada mal! 🎁✨
         </p>
 
-        <!-- Botón para registrarse -->
-        <button onclick="openRegistrationForm()" style="
+        <!-- Botón de registro -->
+        <button onclick="openFormPopup()" style="
             background-color: #007BFF; 
             color: #fff; 
             padding: 10px 20px; 
@@ -451,79 +438,88 @@
     </div>
 </div>
 
-<!-- Ventana emergente de registro -->
-<div id="registrationFormPopup" style="
-    display: none; 
+<!-- Pop-up del formulario de registro -->
+<div id="formPopup" style="
     position: fixed; 
     top: 0; 
     left: 0; 
     width: 100%; 
     height: 100%; 
     background-color: rgba(0, 0, 0, 0.8); 
-    display: flex; 
+    display: none; 
     justify-content: center; 
     align-items: center; 
     z-index: 9999;">
     <div style="
         background-color: #fff; 
-        text-align: center; 
+        text-align: left; 
         padding: 20px 30px; 
         border-radius: 10px; 
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
         max-width: 400px; 
-        width: 90%; 
-        position: relative;">
-        
-        <!-- Botón para cerrar la ventana -->
-        <span onclick="closeRegistrationForm()" style="
+        width: 90%;">
+
+        <!-- Título del formulario -->
+        <h2 style="color: #333; font-size: 20px; text-align: center;">REGISTRO PARA CLIENTES</h2>
+        <span onclick="closeFormPopup()" style="
             position: absolute; 
             top: 10px; 
-            right: 10px; 
-            font-size: 18px; 
-            font-weight: bold; 
+            right: 20px; 
             cursor: pointer; 
-            color: #333;">
-            &times;
-        </span>
-        
+            font-size: 20px; 
+            color: #555;">&times;</span>
+
         <!-- Formulario -->
-        <h3 style="color: #333;">Registro para Clientes</h3>
-        <form id="registrationForm" action="https://script.google.com/macros/s/AKfycbx5UTZlfR4Ww1O-0QYg0-IeFAIynLbsmKtkBBjq9DUz3zLQAHdCDqMHPK7fyZAVvh6Y4A/exec" method="post">
+        <form action="https://script.google.com/macros/s/AKfycbx5UTZlfR4Ww1O-0QYg0-IeFAIynLbsmKtkBBjq9DUz3zLQAHdCDqMHPK7fyZAVvh6Y4A/exec" method="POST">
             <label for="name">Nombres y Apellidos:</label>
-            <input type="text" id="name" name="name" required style="width: 100%; margin-bottom: 10px; padding: 8px;">
+            <input type="text" id="name" name="name" style="width: 100%; margin-bottom: 10px; padding: 8px;" required>
 
             <label for="address">Dirección:</label>
-            <input type="text" id="address" name="address" required style="width: 100%; margin-bottom: 10px; padding: 8px;">
+            <input type="text" id="address" name="address" style="width: 100%; margin-bottom: 10px; padding: 8px;" required>
 
             <label for="phone">Teléfono:</label>
-            <input type="text" id="phone" name="phone" required style="width: 100%; margin-bottom: 10px; padding: 8px;">
+            <input type="tel" id="phone" name="phone" style="width: 100%; margin-bottom: 10px; padding: 8px;" required>
 
             <label for="birthday">Fecha de Cumpleaños:</label>
-            <input type="date" id="birthday" name="birthday" required style="width: 100%; margin-bottom: 10px; padding: 8px;">
+            <input type="date" id="birthday" name="birthday" style="width: 100%; margin-bottom: 10px; padding: 8px;" required>
 
             <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" required style="width: 100%; margin-bottom: 10px; padding: 8px;">
+            <input type="email" id="email" name="email" style="width: 100%; margin-bottom: 10px; padding: 8px;" required>
 
             <label for="social">Instagram o Facebook:</label>
-            <input type="text" id="social" name="social" required style="width: 100%; margin-bottom: 10px; padding: 8px;">
+            <input type="text" id="social" name="social" style="width: 100%; margin-bottom: 10px; padding: 8px;" required>
 
-            <button type="submit" style="background-color: #007BFF; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Enviar</button>
+            <!-- Botón de enviar -->
+            <button type="submit" style="
+                background-color: #007BFF; 
+                color: #fff; 
+                padding: 10px 20px; 
+                border: none; 
+                border-radius: 5px; 
+                cursor: pointer; 
+                font-size: 14px; 
+                width: 100%;">
+                Enviar
+            </button>
         </form>
     </div>
 </div>
 
 <script>
-    function closePopup() {
-        document.getElementById('popup').style.display = 'none';
+    // Función para cerrar el pop-up de bienvenida
+    function closeWelcomePopup() {
+        document.getElementById('welcomePopup').style.display = 'none';
     }
 
-    function openRegistrationForm() {
-        document.getElementById('popup').style.display = 'none'; // Ocultar la ventana de bienvenida
-        document.getElementById('registrationFormPopup').style.display = 'flex'; // Mostrar la ventana del formulario
+    // Función para abrir el pop-up del formulario
+    function openFormPopup() {
+        closeWelcomePopup();
+        document.getElementById('formPopup').style.display = 'flex';
     }
 
-    function closeRegistrationForm() {
-        document.getElementById('registrationFormPopup').style.display = 'none'; // Cerrar la ventana de registro
+    // Función para cerrar el pop-up del formulario
+    function closeFormPopup() {
+        document.getElementById('formPopup').style.display = 'none';
     }
 </script>
 

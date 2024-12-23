@@ -458,71 +458,92 @@
     </div>
 </div>
 
-<!-- Pop-up del formulario de registro -->
+<!-- Formulario de registro -->
 <div id="formPopup" style="
+    display: none; 
     position: fixed; 
     top: 0; 
     left: 0; 
     width: 100%; 
     height: 100%; 
-    background-color: rgba(0, 0, 0, 0.8); 
-    display: none; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    z-index: 9999; 
     justify-content: center; 
-    align-items: center; 
-    z-index: 9999;">
+    align-items: center;">
     <div style="
         background-color: #fff; 
-        text-align: left; 
-        padding: 30px 40px; 
-        border-radius: 12px; 
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); 
-        max-width: 450px; 
-        width: 90%; 
-        position: relative;">
-        
-        <!-- Botón para cerrar -->
-        <span onclick="closeFormPopup()" style="
-            position: absolute; 
-            top: 15px; 
-            right: 20px; 
-            font-size: 20px; 
-            font-weight: bold; 
-            cursor: pointer; 
-            color: #999;">&times;</span>
+        text-align: center; 
+        padding: 20px 30px; 
+        border-radius: 10px; 
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+        max-width: 400px; 
+        width: 90%;">
+        <h2 style="
+            color: #333; 
+            font-size: 24px; 
+            margin-bottom: 15px; 
+            font-weight: bold;">
+            REGISTRO EXCLUSIVO DE CLIENTES
+        </h2>
+        <form action="https://script.google.com/macros/s/AKfycby72rJIM_A-73yJT17IDZwDtEFJei9FfNgFyPxfbOmDvVBxzxSpVISS4lt16xUm1PVgdA/exec" 
+              method="POST" 
+              style="text-align: left;">
+            <label for="name" style="font-size: 14px;">Nombres y Apellidos:</label>
+            <input type="text" name="name" id="name" style="
+                width: 100%; 
+                margin-bottom: 15px; 
+                padding: 10px; 
+                border: 1px solid #ddd; 
+                border-radius: 5px;">
 
-        <!-- Título del formulario -->
-        <h2 style="color: #333; font-size: 22px; text-align: center;">REGISTRO EXCLUSIVO PARA CLIENTES</h2>
+            <label for="address" style="font-size: 14px;">Dirección:</label>
+            <input type="text" name="address" id="address" style="
+                width: 100%; 
+                margin-bottom: 15px; 
+                padding: 10px; 
+                border: 1px solid #ddd; 
+                border-radius: 5px;">
 
-        <!-- Formulario -->
-        <form action="https://script.google.com/macros/s/AKfycbx5UTZlfR4Ww1O-0QYg0-IeFAIynLbsmKtkBBjq9DUz3zLQAHdCDqMHPK7fyZAVvh6Y4A/exec" method="POST">
-        <label for="name">Nombres y Apellidos:</label>
-        <input type="text" id="name" name="name" style="width: 100%; margin-bottom: 15px; padding: 10px;" required>
+            <label for="phone" style="font-size: 14px;">Teléfono:</label>
+            <input type="text" name="phone" id="phone" style="
+                width: 100%; 
+                margin-bottom: 15px; 
+                padding: 10px; 
+                border: 1px solid #ddd; 
+                border-radius: 5px;">
 
-        <label for="address">Dirección:</label>
-        <input type="text" id="address" name="address" style="width: 100%; margin-bottom: 15px; padding: 10px;" required>
+            <label for="birthday" style="font-size: 14px;">Fecha de Cumpleaños:</label>
+            <input type="date" name="birthday" id="birthday" style="
+                width: 100%; 
+                margin-bottom: 15px; 
+                padding: 10px; 
+                border: 1px solid #ddd; 
+                border-radius: 5px;">
 
-        <label for="phone">Teléfono:</label>
-        <input type="tel" id="phone" name="phone" style="width: 100%; margin-bottom: 15px; padding: 10px;" required>
+            <label for="email" style="font-size: 14px;">Correo Electrónico:</label>
+            <input type="email" name="email" id="email" style="
+                width: 100%; 
+                margin-bottom: 15px; 
+                padding: 10px; 
+                border: 1px solid #ddd; 
+                border-radius: 5px;">
 
-        <label for="birthday">Fecha de Cumpleaños:</label>
-        <input type="date" id="birthday" name="birthday" style="width: 100%; margin-bottom: 15px; padding: 10px;" required>
+            <label for="social" style="font-size: 14px;">Instagram o Facebook:</label>
+            <input type="text" name="social" id="social" style="
+                width: 100%; 
+                margin-bottom: 20px; 
+                padding: 10px; 
+                border: 1px solid #ddd; 
+                border-radius: 5px;">
 
-        <label for="email">Correo Electrónico:</label>
-        <input type="email" id="email" name="email" style="width: 100%; margin-bottom: 15px; padding: 10px;" required>
-
-        <label for="social">Instagram o Facebook:</label>
-        <input type="text" id="social" name="social" style="width: 100%; margin-bottom: 15px; padding: 10px;" required>
-
-        <!-- Botón de enviar -->
-        <button type="submit" style="
+            <button type="submit" style="
                 background-color: #007BFF; 
-                color: #fff; 
+                color: white; 
                 padding: 12px 25px; 
                 border: none; 
                 border-radius: 6px; 
                 cursor: pointer; 
-                font-size: 16px; 
-                width: 100%;">
+                font-size: 16px;">
                 Enviar
             </button>
         </form>
@@ -530,6 +551,17 @@
 </div>
 
 <script>
+    // Función para abrir el formulario
+    function openFormPopup() {
+        document.getElementById('formPopup').style.display = 'flex';
+    }
+
+    // Función para cerrar el formulario
+    function closeFormPopup() {
+        document.getElementById('formPopup').style.display = 'none';
+    }
+</script>
+
     // Función para cerrar el pop-up de bienvenida
     function closeWelcomePopup() {
         document.getElementById('welcomePopup').style.display = 'none';

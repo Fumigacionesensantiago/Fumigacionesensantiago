@@ -411,15 +411,26 @@
         border-radius: 10px; 
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
         max-width: 400px; 
-        width: 90%;">
+        width: 90%; 
+        position: relative;">
+        
+        <!-- Botón para cerrar -->
+        <span onclick="closeWelcomePopup()" style="
+            position: absolute; 
+            top: 10px; 
+            right: 15px; 
+            font-size: 18px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            color: #555;">&times;</span>
 
         <!-- Logo ajustado -->
         <img src="Fumigacioneslogo.png" alt="Logo Fumigaciones en Santiago" 
-             style="width: 150px; height: auto; margin-bottom: 15px;">
+             style="width: 160px; height: auto; margin-bottom: 15px;">
 
         <!-- Mensaje de bienvenida -->
         <h2 style="color: #333; font-size: 24px; margin: 0;">¡Bienvenido! 🎉</h2>
-        <p style="color: #555; font-size: 14px; margin: 15px 0;">
+        <p style="color: #555; font-size: 14px; margin: 15px 0; line-height: 1.6;">
             <strong>Si ya eres cliente, regístrate</strong> y participa en nuestros <strong>sorteos exclusivos</strong>. <br>
             ¡Un regalito a tu puerta no estaría nada mal! 🎁✨
         </p>
@@ -457,17 +468,21 @@
         border-radius: 10px; 
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
         max-width: 400px; 
-        width: 90%;">
+        width: 90%; 
+        position: relative;">
 
-        <!-- Título del formulario -->
-        <h2 style="color: #333; font-size: 20px; text-align: center;">REGISTRO PARA CLIENTES</h2>
+        <!-- Botón para cerrar -->
         <span onclick="closeFormPopup()" style="
             position: absolute; 
             top: 10px; 
-            right: 20px; 
+            right: 15px; 
+            font-size: 18px; 
+            font-weight: bold; 
             cursor: pointer; 
-            font-size: 20px; 
             color: #555;">&times;</span>
+
+        <!-- Título del formulario -->
+        <h2 style="color: #333; font-size: 20px; text-align: center;">REGISTRO PARA CLIENTES</h2>
 
         <!-- Formulario -->
         <form action="https://script.google.com/macros/s/AKfycbx5UTZlfR4Ww1O-0QYg0-IeFAIynLbsmKtkBBjq9DUz3zLQAHdCDqMHPK7fyZAVvh6Y4A/exec" method="POST">
@@ -522,7 +537,6 @@
         document.getElementById('formPopup').style.display = 'none';
     }
 </script>
-
 
 
 <script>

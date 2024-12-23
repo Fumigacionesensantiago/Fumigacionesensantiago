@@ -392,6 +392,7 @@
     </style>
 </head>
 </body>
+</body>
 <!-- Pop-up de bienvenida optimizado -->
 <div id="popup" style="
     position: fixed; 
@@ -431,10 +432,10 @@
              style="width: 120px; height: auto; margin-bottom: 15px;">
         
         <!-- Mensaje de bienvenida -->
-        <h2 style="color: #333; font-size: 24px; margin: 0;">¡Bienvenido!</h2>
-        <p style="color: #555; font-size: 16px; margin: 15px 0; line-height: 1.6; max-width: 350px;">
-            <strong>Si ya eres cliente</strong>, regístrate y participa en nuestros sorteos exclusivos. <br>
-            ¡Un regalito como un <strong>🐾 perrito</strong> o un <strong>🐱 gatito</strong> a tu puerta no estaría nada mal!
+        <h2 style="color: #333; font-size: 24px; margin: 0;">¡Bienvenido! 🎉</h2>
+        <p style="color: #555; font-size: 14px; margin: 15px auto; line-height: 1.6; max-width: 400px; text-align: center;">
+            <strong>Si ya eres cliente</strong>, regístrate y participa en nuestros <strong>sorteos exclusivos</strong>. <br>
+            ¡Un regalito a tu puerta no estaría nada mal! 🎁✨
         </p>
 
         <!-- Botón para registrarse -->
@@ -518,14 +519,15 @@
     }
 
     function openRegistrationForm() {
-        document.getElementById('popup').style.display = 'none';
-        document.getElementById('registrationFormPopup').style.display = 'flex';
+        document.getElementById('popup').style.display = 'none'; // Ocultar la ventana de bienvenida
+        document.getElementById('registrationFormPopup').style.display = 'flex'; // Mostrar la ventana del formulario
     }
 
     function closeRegistrationForm() {
-        document.getElementById('registrationFormPopup').style.display = 'none';
+        document.getElementById('registrationFormPopup').style.display = 'none'; // Cerrar la ventana de registro
     }
 </script>
+
 
 <script>
 <!-- Sección de contacto -->

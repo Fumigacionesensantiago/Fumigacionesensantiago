@@ -391,7 +391,8 @@
         }
     </style>
 </head>
-<!-- Pop-up de bienvenida -->
+
+<!-- Ventana emergente de bienvenida -->
 <div id="welcomePopup" style="
     position: fixed; 
     top: 0; 
@@ -406,7 +407,7 @@
     <div style="
         background-color: #fff; 
         text-align: center; 
-        padding: 30px 40px; 
+        padding: 30px; 
         border-radius: 12px; 
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); 
         max-width: 450px; 
@@ -425,7 +426,7 @@
 
         <!-- Logo destacado -->
         <img src="Fumigacioneslogo.png" alt="Logo Fumigaciones en Santiago" 
-             style="width: 200px; height: auto; margin-bottom: 25px;">
+             style="width: 200px; height: auto; margin-bottom: 20px;">
 
         <!-- Mensaje de bienvenida -->
         <h2 style="
@@ -438,10 +439,10 @@
         <p style="
             color: #555; 
             font-size: 16px; 
-            line-height: 1.8; 
-            margin: 0 auto; 
-            text-align: center;">
-            <strong>Si ya eres cliente</strong>, regístrate y participa en nuestros <strong>sorteos exclusivos para CLIENTES 🎀🎉</strong>. <br>
+            line-height: 1.6; 
+            margin: 0 auto;">
+            Si ya eres cliente, regístrate y participa de <br> 
+            premios, sorteos o descuentos especiales por cumpleaños.
         </p>
 
         <!-- Botón de registro -->
@@ -452,49 +453,50 @@
             border: none; 
             border-radius: 6px; 
             cursor: pointer; 
-            font-size: 16px;">
-            Registrarme
+            font-size: 16px; 
+            margin-top: 20px;">
+            Registrarme, soy cliente
         </button>
     </div>
 </div>
 
 <!-- Ventana emergente del formulario -->
 <div id="formPopup" style="
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: none; 
+    justify-content: center; 
+    align-items: center; 
     z-index: 9999;">
     <div style="
-        background-color: white;
-        text-align: center;
-        padding: 20px 30px;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        max-width: 400px;
-        width: 90%;
+        background-color: white; 
+        text-align: center; 
+        padding: 20px; 
+        border-radius: 12px; 
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+        max-width: 450px; 
+        width: 90%; 
         position: relative;">
         
-        <!-- Botón para cerrar la ventana -->
-        <button onclick="closeFormPopup()" style="
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;">&times;</button>
+        <!-- Botón para cerrar -->
+        <span onclick="closeFormPopup()" style="
+            position: absolute; 
+            top: 15px; 
+            right: 20px; 
+            font-size: 20px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            color: #999;">&times;</span>
 
-        <!-- Título -->
+        <!-- Título del formulario -->
         <h2 style="
-            color: #333;
-            font-size: 24px;
-            margin-bottom: 15px;
+            color: #333; 
+            font-size: 24px; 
+            margin-bottom: 20px; 
             font-weight: bold;">
             REGISTRO EXCLUSIVO DE CLIENTES
         </h2>
@@ -509,31 +511,7 @@
                 margin-bottom: 15px; 
                 padding: 10px; 
                 border: 1px solid #ddd; 
-                border-radius: 5px;">
-
-            <label for="address" style="font-size: 14px;">Dirección:</label>
-            <input type="text" name="address" id="address" style="
-                width: 100%; 
-                margin-bottom: 15px; 
-                padding: 10px; 
-                border: 1px solid #ddd; 
-                border-radius: 5px;">
-
-            <label for="phone" style="font-size: 14px;">Teléfono:</label>
-            <input type="text" name="phone" id="phone" style="
-                width: 100%; 
-                margin-bottom: 15px; 
-                padding: 10px; 
-                border: 1px solid #ddd; 
-                border-radius: 5px;">
-
-            <label for="birthday" style="font-size: 14px;">Fecha de Cumpleaños:</label>
-            <input type="date" name="birthday" id="birthday" style="
-                width: 100%; 
-                margin-bottom: 15px; 
-                padding: 10px; 
-                border: 1px solid #ddd; 
-                border-radius: 5px;">
+                border-radius: 5px;" required>
 
             <label for="email" style="font-size: 14px;">Correo Electrónico:</label>
             <input type="email" name="email" id="email" style="
@@ -541,22 +519,14 @@
                 margin-bottom: 15px; 
                 padding: 10px; 
                 border: 1px solid #ddd; 
-                border-radius: 5px;">
-
-            <label for="social" style="font-size: 14px;">Instagram o Facebook:</label>
-            <input type="text" name="social" id="social" style="
-                width: 100%; 
-                margin-bottom: 20px; 
-                padding: 10px; 
-                border: 1px solid #ddd; 
-                border-radius: 5px;">
+                border-radius: 5px;" required>
 
             <button type="submit" style="
                 background-color: #007BFF; 
                 color: white; 
-                padding: 12px 25px; 
+                padding: 10px 20px; 
                 border: none; 
-                border-radius: 6px; 
+                border-radius: 5px; 
                 cursor: pointer; 
                 font-size: 16px;">
                 Enviar
@@ -566,33 +536,14 @@
 </div>
 
 <script>
-    // Función para cerrar el formulario emergente
-    function closeFormPopup() {
-        document.getElementById('formPopup').style.display = 'none';
+    // Función para cerrar el pop-up de bienvenida
+    function closeWelcomePopup() {
+        document.getElementById('welcomePopup').style.display = 'none';
     }
 
-    // Función para manejar el envío del formulario
-    function handleSubmit(event) {
-        event.preventDefault(); // Evita el comportamiento por defecto
-        const form = event.target;
-        const formData = new FormData(form);
-        
-        fetch(form.action, {
-            method: form.method,
-            body: formData,
-        }).then(response => {
-            alert('¡Registro exitoso! Gracias por registrarte.');
-            window.location.href = 'https://fumigacionesensantiago.cl/';
-        }).catch(error => {
-            alert('Ocurrió un error. Inténtalo de nuevo.');
-            console.error('Error:', error);
-        });
-    }
-</script>
-
-<script>
     // Función para abrir el formulario
     function openFormPopup() {
+        closeWelcomePopup();
         document.getElementById('formPopup').style.display = 'flex';
     }
 
@@ -600,25 +551,26 @@
     function closeFormPopup() {
         document.getElementById('formPopup').style.display = 'none';
     }
+
+    // Función para manejar el envío del formulario
+    function handleSubmit(event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        fetch(form.action, {
+            method: form.method,
+            body: formData,
+        })
+            .then(() => {
+                alert('¡Registro exitoso! Gracias por registrarte.');
+                closeFormPopup();
+                window.location.href = 'https://fumigacionesensantiago.cl/';
+            })
+            .catch(() => {
+                alert('Ocurrió un error. Inténtalo de nuevo.');
+            });
+    }
 </script>
-
-    // Función para cerrar el pop-up de bienvenida
-    function closeWelcomePopup() {
-        document.getElementById('welcomePopup').style.display = 'none';
-    }
-
-    // Función para abrir el pop-up del formulario
-    function openFormPopup() {
-        closeWelcomePopup();
-        document.getElementById('formPopup').style.display = 'flex';
-    }
-
-    // Función para cerrar el pop-up del formulario
-    function closeFormPopup() {
-        document.getElementById('formPopup').style.display = 'none';
-    }
-</script>
-
 
 <script>
 <!-- Sección de contacto -->

@@ -458,38 +458,51 @@
     </div>
 </div>
 
-<!-- Formulario de registro -->
+<!-- Ventana emergente del formulario -->
 <div id="formPopup" style="
-    display: none; 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
-    background-color: rgba(0, 0, 0, 0.7); 
-    z-index: 9999; 
-    justify-content: center; 
-    align-items: center;">
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;">
     <div style="
-        background-color: #fff; 
-        text-align: center; 
-        padding: 20px 30px; 
-        border-radius: 10px; 
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
-        max-width: 400px; 
-        width: 90%;">
+        background-color: white;
+        text-align: center;
+        padding: 20px 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        width: 90%;
+        position: relative;">
+        
+        <!-- Botón para cerrar la ventana -->
+        <button onclick="closeFormPopup()" style="
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;">&times;</button>
+
+        <!-- Título -->
         <h2 style="
-            color: #333; 
-            font-size: 24px; 
-            margin-bottom: 15px; 
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 15px;
             font-weight: bold;">
             REGISTRO EXCLUSIVO DE CLIENTES
         </h2>
-      <form action="https://script.google.com/macros/s/AKfycbwylNzbal99xSG2zqL2KglgMpSmW3CRMZbkE1Pn-Nz-20qSw_HPIn5AkjQ-UXJpBXNCLA/exec" 
-      method="POST" 
-      style="text-align: center;">
-    <!-- Los campos de tu formulario -->
-</form>
+
+        <!-- Formulario -->
+        <form action="https://script.google.com/macros/s/AKfycbwUvdtNCkiU8NSiVw3V45VeDYO29dDSI-AP-p1Euq7DN_NVbGWYl5UcBIE-SkWVkIw2mA/exec" 
+              method="POST" 
+              onsubmit="return handleSubmit(event)">
             <label for="name" style="font-size: 14px;">Nombres y Apellidos:</label>
             <input type="text" name="name" id="name" style="
                 width: 100%; 
@@ -551,6 +564,31 @@
         </form>
     </div>
 </div>
+
+<script>
+    // Función para cerrar el formulario emergente
+    function closeFormPopup() {
+        document.getElementById('formPopup').style.display = 'none';
+    }
+
+    // Función para manejar el envío del formulario
+    function handleSubmit(event) {
+        event.preventDefault(); // Evita el comportamiento por defecto
+        const form = event.target;
+        const formData = new FormData(form);
+        
+        fetch(form.action, {
+            method: form.method,
+            body: formData,
+        }).then(response => {
+            alert('¡Registro exitoso! Gracias por registrarte.');
+            window.location.href = 'https://fumigacionesensantiago.cl/';
+        }).catch(error => {
+            alert('Ocurrió un error. Inténtalo de nuevo.');
+            console.error('Error:', error);
+        });
+    }
+</script>
 
 <script>
     // Función para abrir el formulario

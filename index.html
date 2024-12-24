@@ -392,7 +392,7 @@
     </style>
 </head>
 
-<!-- Ventana emergente de bienvenida -->
+<!-- Pop-up de bienvenida -->
 <div id="welcomePopup" style="
     position: fixed; 
     top: 0; 
@@ -413,12 +413,11 @@
         max-width: 450px; 
         width: 90%; 
         position: relative;">
-        
         <!-- Botón para cerrar -->
         <span onclick="closeWelcomePopup()" style="
             position: absolute; 
-            top: 15px; 
-            right: 20px; 
+            top: 10px; 
+            right: 15px; 
             font-size: 20px; 
             font-weight: bold; 
             cursor: pointer; 
@@ -431,8 +430,8 @@
         <!-- Mensaje de bienvenida -->
         <h2 style="
             color: #333; 
-            font-size: 26px; 
-            margin: 0 0 15px 0; 
+            font-size: 24px; 
+            margin-bottom: 15px; 
             font-weight: bold;">
             ¡BIENVENIDO!
         </h2>
@@ -440,9 +439,9 @@
             color: #555; 
             font-size: 16px; 
             line-height: 1.6; 
-            margin: 0 auto;">
-            Si ya eres cliente, regístrate y participa de <br> 
-            premios, sorteos o descuentos especiales por cumpleaños.
+            margin: 0 auto 20px; 
+            text-align: center;">
+            Si eres cliente, regístrate y participa de premios, sorteos, o descuentos especiales por cumpleaños.
         </p>
 
         <!-- Botón de registro -->
@@ -453,8 +452,7 @@
             border: none; 
             border-radius: 6px; 
             cursor: pointer; 
-            font-size: 16px; 
-            margin-top: 20px;">
+            font-size: 16px;">
             Registrarme, soy cliente
         </button>
     </div>
@@ -462,41 +460,40 @@
 
 <!-- Ventana emergente del formulario -->
 <div id="formPopup" style="
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
-    background-color: rgba(0, 0, 0, 0.8); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
     display: none; 
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     z-index: 9999;">
     <div style="
-        background-color: white; 
-        text-align: center; 
-        padding: 20px; 
-        border-radius: 12px; 
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
-        max-width: 450px; 
-        width: 90%; 
+        background-color: white;
+        text-align: center;
+        padding: 20px 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        width: 90%;
         position: relative;">
-        
-        <!-- Botón para cerrar -->
-        <span onclick="closeFormPopup()" style="
-            position: absolute; 
-            top: 15px; 
-            right: 20px; 
-            font-size: 20px; 
-            font-weight: bold; 
-            cursor: pointer; 
-            color: #999;">&times;</span>
+        <!-- Botón para cerrar la ventana -->
+        <button onclick="closeFormPopup()" style="
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;">&times;</button>
 
-        <!-- Título del formulario -->
+        <!-- Título -->
         <h2 style="
-            color: #333; 
-            font-size: 24px; 
-            margin-bottom: 20px; 
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 15px;
             font-weight: bold;">
             REGISTRO EXCLUSIVO DE CLIENTES
         </h2>
@@ -511,7 +508,31 @@
                 margin-bottom: 15px; 
                 padding: 10px; 
                 border: 1px solid #ddd; 
-                border-radius: 5px;" required>
+                border-radius: 5px;">
+
+            <label for="address" style="font-size: 14px;">Dirección:</label>
+            <input type="text" name="address" id="address" style="
+                width: 100%; 
+                margin-bottom: 15px; 
+                padding: 10px; 
+                border: 1px solid #ddd; 
+                border-radius: 5px;">
+
+            <label for="phone" style="font-size: 14px;">Teléfono:</label>
+            <input type="text" name="phone" id="phone" style="
+                width: 100%; 
+                margin-bottom: 15px; 
+                padding: 10px; 
+                border: 1px solid #ddd; 
+                border-radius: 5px;">
+
+            <label for="birthday" style="font-size: 14px;">Fecha de Cumpleaños:</label>
+            <input type="date" name="birthday" id="birthday" style="
+                width: 100%; 
+                margin-bottom: 15px; 
+                padding: 10px; 
+                border: 1px solid #ddd; 
+                border-radius: 5px;">
 
             <label for="email" style="font-size: 14px;">Correo Electrónico:</label>
             <input type="email" name="email" id="email" style="
@@ -519,14 +540,22 @@
                 margin-bottom: 15px; 
                 padding: 10px; 
                 border: 1px solid #ddd; 
-                border-radius: 5px;" required>
+                border-radius: 5px;">
+
+            <label for="social" style="font-size: 14px;">Instagram o Facebook:</label>
+            <input type="text" name="social" id="social" style="
+                width: 100%; 
+                margin-bottom: 20px; 
+                padding: 10px; 
+                border: 1px solid #ddd; 
+                border-radius: 5px;">
 
             <button type="submit" style="
                 background-color: #007BFF; 
                 color: white; 
-                padding: 10px 20px; 
+                padding: 12px 25px; 
                 border: none; 
-                border-radius: 5px; 
+                border-radius: 6px; 
                 cursor: pointer; 
                 font-size: 16px;">
                 Enviar
@@ -541,13 +570,13 @@
         document.getElementById('welcomePopup').style.display = 'none';
     }
 
-    // Función para abrir el formulario
+    // Función para abrir el pop-up del formulario
     function openFormPopup() {
         closeWelcomePopup();
         document.getElementById('formPopup').style.display = 'flex';
     }
 
-    // Función para cerrar el formulario
+    // Función para cerrar el pop-up del formulario
     function closeFormPopup() {
         document.getElementById('formPopup').style.display = 'none';
     }
@@ -557,18 +586,18 @@
         event.preventDefault();
         const form = event.target;
         const formData = new FormData(form);
+
         fetch(form.action, {
             method: form.method,
             body: formData,
-        })
-            .then(() => {
-                alert('¡Registro exitoso! Gracias por registrarte.');
-                closeFormPopup();
-                window.location.href = 'https://fumigacionesensantiago.cl/';
-            })
-            .catch(() => {
-                alert('Ocurrió un error. Inténtalo de nuevo.');
-            });
+        }).then(response => {
+            alert('¡Registro exitoso! Gracias por registrarte.');
+            closeFormPopup();
+            window.location.href = 'https://fumigacionesensantiago.cl/';
+        }).catch(error => {
+            alert('Ocurrió un error. Inténtalo de nuevo.');
+            console.error('Error:', error);
+        });
     }
 </script>
 

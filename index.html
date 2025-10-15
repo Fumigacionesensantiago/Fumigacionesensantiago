@@ -1,4 +1,4 @@
-<!doctype html> 
+<!doctype html>
 <html lang="es-CL">
 <head>
   <meta charset="utf-8" />
@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
   <style>
     /* ================= Base ================= */
     :root{
@@ -18,9 +17,7 @@
       --radius:18px; --radius-lg:26px; --shadow:0 10px 24px rgba(0,0,0,.06); --navH:68px;
       --fs-body:16px; --fs-small:13px; --fs-btn:15px; --fs-h2:clamp(22px,4.5vw,32px);
       --btn-h:48px; --btn-px:18px; --btn-gap:10px; --btn-radius:14px; --focus:#11111133;
-
-      /* ÚNICO CONTROL para el ancho de los 2 botones del formulario de contacto */
-      --contact-btn-w:180px; /* ← cambia aquí el ancho deseado (220/240/260px, etc.) */
+      --contact-btn-w:180px;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -34,7 +31,7 @@
     .container{width:min(1120px, 92vw); margin-inline:auto}
     .grid{display:grid; gap:24px}
 
-    /* ================= NAV (logo sin fondo) ================= */
+    /* ================= NAV ================= */
     header{
       position:sticky; top:0; z-index:40;
       background:rgba(255,255,255,.8); backdrop-filter:saturate(180%) blur(10px);
@@ -42,8 +39,7 @@
     }
     .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
     .brand{display:inline-flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.2px}
-    .brand-logo{width:40px; height:40px; display:block}   /* logo “al natural” */
-
+    .brand-logo{width:40px; height:40px; display:block}
     .menu{display:flex; gap:18px; align-items:center}
     .menu a{padding:8px 10px; border-radius:10px}
     .menu a:hover{background:var(--card)}
@@ -61,7 +57,7 @@
 
     /* ================ HERO ================= */
     .hero{min-height:calc(100svh - var(--navH)); display:grid; align-items:center; padding:32px 0 40px}
-    .hero .wrap{display:grid; gap:32px; grid-template-columns:1.05fr .95fr; align-items:center}
+    .hero .wrap{display:grid; gap:32px; grid-template-columns:1.05fr .95fr; align-items:center; position:relative}
     .squiggle{position:relative; display:inline-block}
     .squiggle:after{
       content:""; position:absolute; left:0; bottom:-10px; height:9px; width:140px;
@@ -71,12 +67,11 @@
     .hero-left h1{font-size:clamp(34px,7.2vw,64px); line-height:1.02; margin:0 0 16px; letter-spacing:-0.5px}
     .hero-left p{color:var(--muted); font-size:clamp(16px,2.5vw,18px); margin:0 0 20px}
 
-    /* Panel derecho */
     .hero-right{
       background:linear-gradient(180deg,#f8fafc 0%,#eef2f7 100%);
       border:1px solid var(--line); border-radius:var(--radius-lg); padding:22px;
       box-shadow:0 24px 60px rgba(0,0,0,.10);
-      display:grid; gap:16px; justify-items:center
+      display:grid; gap:16px; justify-items:center;
     }
     .hero-img{
       width:100%; max-width:720px; border-radius:20px;
@@ -96,7 +91,7 @@
       90%{transform:translateX(0.5px) rotate(0.6deg)}
     }
 
-    /* ============== Botones (homogeneizados) ============== */
+    /* Botones */
     .btn, .submit{
       display:inline-flex; align-items:center; justify-content:center; gap:var(--btn-gap);
       height:var(--btn-h); padding:0 var(--btn-px);
@@ -114,10 +109,13 @@
     .cta-under{display:flex; flex-wrap:wrap; gap:12px; justify-content:center; width:100%}
     @media (max-width:420px){ .btn, .submit{width:100%} }
 
-    /* Responsive hero */
+    /* ====== CORRECCIÓN MOBILE (sin superposiciones) ====== */
     @media (max-width:960px){
       .hero .wrap{grid-template-columns:1fr; gap:26px}
-      .hero-right{order:-1}
+      .hero-left{order:1; z-index:2; position:relative}
+      .hero-right{order:2; z-index:1}
+      /* evita overlays si algún estilo externo usó absolute */
+      .hero-right, .hero-right *{position:relative!important}
       .hero-img{max-width:520px; margin-inline:auto}
     }
 
@@ -154,17 +152,20 @@
     label{font-weight:600; font-size:14px}
     input,textarea{width:100%; padding:12px 14px; border:1px solid #cfd3d8; border-radius:12px; background:#fff; font:inherit; color:var(--ink)}
     input:focus,textarea:focus{outline:none; box-shadow:0 0 0 4px var(--focus)}
-    .actions{display:flex; gap:10px; flex-wrap:wrap} /* se mantiene, no se toca */
+    .actions{display:flex; gap:10px; flex-wrap:wrap}
     .muted{color:var(--muted); font-size:var(--fs-small)}
     .inline{display:flex; gap:10px; align-items:center}
 
-    /* FAB WhatsApp */
+    /* FAB WhatsApp (siempre visible) */
     .fab-wa{
-      position:fixed; right:16px; bottom:16px; width:56px; height:56px; border-radius:50%;
+      position:fixed; right:clamp(14px,3vw,18px);
+      bottom:calc(14px + env(safe-area-inset-bottom));
+      width:56px; height:56px; border-radius:50%;
       display:grid; place-items:center; background:#fff; border:2px solid var(--wa); box-shadow:var(--shadow);
-      transition:transform .15s ease, box-shadow .2s ease
+      transition:transform .15s ease, box-shadow .2s ease;
+      z-index:9999; pointer-events:auto;
     }
-    .fab-wa:hover{transform:translateY(-2px); box-shadow:var(--shadow)}
+    .fab-wa:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.14)}
 
     /* Footer */
     footer{border-top:1px solid var(--line); padding:28px 0; color:var(--muted)}
@@ -198,13 +199,13 @@
     }
     @media (max-width:979.98px){ .fumigador-img{ width:220px } }
 
-    .datos-contacto{ padding:20px } /* reusa .form-wrap */
+    .datos-contacto{ padding:20px }
 
-    /* ====== ÚNICO CAMBIO: ancho y centrado de los 2 botones del formulario ====== */
+    /* Botones del formulario centrados con ancho fijo controlado */
     #leadForm .actions{
       display:grid;
       grid-template-columns: repeat(2, var(--contact-btn-w));
-      justify-content:center;               /* centra el bloque completo */
+      justify-content:center;
       align-items:center;
       gap:16px;
     }
@@ -258,7 +259,6 @@
         <aside class="hero-right" data-anim>
           <img src="inicio1.png" alt="Ilustración de control de plagas" class="hero-img" loading="eager" decoding="async">
           <div class="cta-under">
-            <!-- Cambios: estilos inline para ancho/alto/centro iguales -->
             <a class="btn btn-wa" href="https://wa.me/56940022575?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener"
                style="width:180px; display:inline-flex; justify-content:center; align-items:center; height:var(--btn-h);">💬 WhatsApp</a>
             <a class="btn btn-phone" href="tel:+56940022575"

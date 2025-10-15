@@ -250,3 +250,382 @@ footer{border-top:1px solid var(--line); padding:28px 0; color:var(--muted)}
   /* Deja aire entre navbar fijo y contenido */
   .page { margin-top: clamp(64px, 10vh, 96px); }
 }
+
+
+
+/* ================================
+   MÓVIL (≤768px) – v3 compacto
+   ================================ */
+@media (max-width: 768px){
+
+  /* Escala base pequeña y ligera */
+  html { font-size: 12px; }         /* base global */
+  body { line-height: 1.55; letter-spacing: 0.1px; }
+
+  h1 { font-size: 1.8rem; line-height: 1.2; font-weight: 700; }
+  h2 { font-size: 1.4rem; line-height: 1.25; }
+  h3 { font-size: 1.15rem; line-height: 1.25; }
+  p, li, label, input, textarea, button { font-size: 1rem; }
+
+  /* Más aire entre secciones */
+  section { margin: 2rem 0; padding-inline: 1rem; }
+
+  /* Tarjetas más ligeras */
+  .card, .service-card, .story-card, .case-card, .contact-card, .hero-card {
+    background: #f3f4f6;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    border-radius: 14px;
+    padding: 1.25rem 1rem;
+  }
+
+  /* Imagen principal más pequeña */
+  .hero-illust img {
+    max-width: 75%;
+    height: auto;
+    display: block;
+    margin-inline: auto;
+  }
+
+  /* Botones más pequeños y alineados */
+  .cta-row, .form-buttons {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .cta-row .btn, .form-buttons button {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+
+  /* Campos del formulario más compactos */
+  input, textarea, select {
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+  }
+
+  /* Footer más limpio */
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 1.25rem 1rem;
+  }
+
+  /* ——— Ocultar cualquier ícono flotante ——— */
+  .whatsapp-helper,
+  .floating-helper,
+  .floating-widget,
+  .chat-widget,
+  .wa-bubble,
+  .fab-whatsapp,
+  .btn-whatsapp-fixed,
+  [class*="whats"][class*="fix"],
+  [style*="position: fixed"][style*="bottom"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+
+
+
+
+
+/* ===== MÓVIL – Slide 1 (título protagonista, texto menor, sin imagen) ===== */
+@media (max-width: 768px){
+
+  /* Estructura y respiración */
+  .hero{
+    min-height: auto;
+    padding: 34px 0 22px;              /* más aire arriba/abajo */
+  }
+  .hero .wrap{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Ocultar ilustración/tarjeta del hero en móviles */
+  .hero-right,
+  .hero-img,
+  .hero-illust,
+  .hero-illust img{
+    display: none !important;
+  }
+
+  /* Título centrado con degradado */
+  .hero-left{ text-align: center; }
+  .hero-left h1{
+    font-size: clamp(30px, 8.8vw, 42px) !important;  /* más grande arriba */
+    line-height: 1.08;
+    letter-spacing: -0.3px;
+    margin: 0 auto 10px;
+    background: linear-gradient(180deg, #111 0%, #4b5563 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;                                /* efecto degradado */
+  }
+
+  /* Cuerpo más pequeño y contenido */
+  .hero-left p{
+    font-size: .92rem !important;                      /* menos tamaño abajo */
+    color: var(--muted);
+    max-width: 36ch;
+    margin: 0 auto;                                    /* centrado */
+  }
+
+  /* Más separación entre “arriba” (título/texto) y “abajo” (botón) */
+  .cta-under{
+    justify-content: center;
+    margin-top: 18px;                                  /* aire extra */
+  }
+
+  /* CTA más discreto y pequeño */
+  .btn, .submit{
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 12px;
+    font-size: .95rem;
+  }
+  .btn-ig{
+    /* filtro cinemático para bajar protagonismo sin cambiar marca */
+    filter: saturate(.82) brightness(.98) contrast(.92) hue-rotate(-6deg);
+  }
+
+  /* Por si quedara algún flotante */
+  .fab-wa,
+  .floating-helper,
+  .wa-bubble,
+  .btn-whatsapp-fixed,
+  [class*="whats"][class*="fix"],
+  [style*="position: fixed"][style*="bottom"]{
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+
+
+
+
+
+/* ===== WhatsApp FAB: visible en escritorio, oculto en móviles ===== */
+
+/* Asegura visibilidad por defecto (≥769px) */
+@media (min-width: 769px){
+  .fab-wa{ 
+    display: grid !important;        /* o block/inline-grid según tu diseño */
+    place-items: center;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+/* Ocultar solo en móviles (≤768px) */
+@media (max-width: 768px){
+  .fab-wa,
+  .wa-fab,
+  .whatsapp-fab,
+  .btn-whatsapp-fixed,
+  [class*="whats"][class*="fix"],
+  a[href*="wa.me"][style*="position: fixed"],
+  a[href*="api.whatsapp.com"][style*="position: fixed"]{
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* Móvil: aire en el hero, más separación y sin que asome "Servicios" */
+@media (max-width: 768px){
+
+  /* 1) El hero ocupa la primera pantalla completa (sin mostrar la 2ª sección) */
+  .hero{
+    /* llena el alto visible restando la barra (usa tu --navH) */
+    min-height: calc(100svh - var(--navH)) !important;
+    display: grid !important;
+    align-content: center !important;   /* centra el bloque interior */
+    padding: 36px 0 32px !important;    /* aire arriba/abajo */
+  }
+
+  /* 2) Título y párrafos bien centrados y con respiración */
+  .hero-left{ text-align:center !important; padding-inline: 22px !important; }
+  .hero-left h1{ margin: 0 auto 14px !important; max-width: 22ch !important; }
+  .hero-left p{
+    font-size: .92rem !important;
+    color: var(--muted) !important;
+    max-width: 36ch !important;
+    margin: 0 auto 18px !important;     /* + aire bajo cada párrafo */
+  }
+  .hero-left p + p{ margin-top: 6px !important; } /* separación entre párrafos */
+
+  /* 3) Más espacio antes del botón */
+  .cta-under{ margin-top: 24px !important; }       /* párrafos → botón */
+
+  /* 4) Por si tu heading de la siguiente sección fuera "Servicios",
+        evitamos que aparezca en la primera pantalla SIN ocultarlo del todo */
+  #servicios .section-title,
+  section[id*="servicio"] .section-title{
+    /* si igualmente asoma por tamaños raros, empújalo un poco más */
+    scroll-margin-top: 80px;            /* no afecta layout, solo anclas */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* MÓVIL: Casos de éxito con imagen protagonista (override del 88x88) */
+@media (max-width: 768px){
+
+  /* Tarjeta a una columna y con aire */
+  .timeline{ gap: 20px !important; }
+  .story{
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    align-items: start !important;
+    padding: 16px !important;
+  }
+
+  /* Anula el 88x88 y convierte la imagen en portada */
+  .timeline .story > img,
+  .timeline .story .story-img{
+    width: 100% !important;
+    height: min(55vh, 420px) !important;   /* ajusta aquí la “altura de portada” */
+    object-fit: cover !important;
+    border: 0 !important;                  /* quita borde punteado */
+    border-radius: 16px !important;
+    background: #fff !important;
+    display: block !important;
+  }
+
+  /* Tipos cómodos bajo la imagen */
+  .story h3{
+    font-size: 1.15rem !important;
+    margin: 8px 0 6px !important;
+  }
+  .story p{
+    font-size: .95rem !important;
+    line-height: 1.6 !important;
+  }
+}
+
+
+
+
+
+
+
+/* MÓVIL – Historias divertidas: imagen grande + texto debajo */
+@media (max-width: 768px){
+
+  /* 1) Forzamos 1 columna en las tarjetas de esta sección */
+  section[id*="historia"], 
+  section[id*="diver"], 
+  .timeline.historias{ /* por si le pones esta clase al section */
+    /* no estilos aquí; solo usamos como ancla */
+  }
+  section[id*="historia"] .story,
+  section[id*="diver"] .story,
+  .timeline.historias .story,
+  /* fallback genérico por si reutiliza .timeline */
+  .timeline .story{
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    align-items: start !important;
+    padding: 16px !important;
+  }
+
+  /* 2) Imagen protagonista (anula el 88x88 y quita borde punteado) */
+  section[id*="historia"] .story > img,
+  section[id*="diver"] .story > img,
+  .timeline.historias .story > img,
+  section[id*="historia"] .story picture > img,
+  section[id*="diver"] .story picture > img,
+  .timeline.historias .story picture > img,
+  section[id*="historia"] .story img,
+  section[id*="diver"] .story img,
+  .timeline.historias .story img{
+    width: 100% !important;
+    height: min(55vh, 420px) !important;   /* sube/baja si quieres */
+    object-fit: cover !important;
+    border: 0 !important;
+    border-radius: 16px !important;
+    background: #fff !important;
+    display: block !important;
+  }
+
+  /* 3) Tipografía y respiración */
+  section[id*="historia"] .story h3,
+  section[id*="diver"] .story h3,
+  .timeline.historias .story h3,
+  .timeline .story h3{
+    font-size: 1.15rem !important;
+    margin: 8px 0 6px !important;
+  }
+  section[id*="historia"] .story p,
+  section[id*="diver"] .story p,
+  .timeline.historias .story p,
+  .timeline .story p{
+    font-size: .95rem !important;
+    line-height: 1.6 !important;
+  }
+}
+
+
+
+/* === Visibilidad explícita del fumigador === */
+@media (max-width: 979.98px){
+  .fumigador-img { display: none !important; }
+}
+
+@media (min-width: 980px){
+  .fumigador-img{
+    display: block !important;
+    width: 220px !important;
+    height: auto !important;
+    margin: 6px 0 10px 0 !important;
+    filter: drop-shadow(0 8px 18px rgba(0,0,0,.08)) !important;
+  }
+  .col-izq{ align-content: start !important; justify-items: start !important; }
+}
+
+
+
+
+
+/* --- Mostrar el fumigador en móviles dentro de #contacto --- */
+@media (max-width: 768px){
+  #contacto .fumigador-img{
+    display: block !important;
+    width: min(55vw, 220px);
+    height: auto;
+    margin: 0 auto 12px;          /* centrado y con aire */
+    filter: drop-shadow(0 8px 18px rgba(0,0,0,.08));
+  }
+
+  /* (opcional) forzar 1 columna y centrar la columna izquierda */
+  #contacto .contacto-grid2{ grid-template-columns: 1fr !important; }
+  #contacto .col-izq{ justify-items: center !important; }
+}
